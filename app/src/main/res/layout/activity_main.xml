@@ -41,12 +41,12 @@
 
         </LinearLayout>
 
-      <fragment
+      <androidx.fragment.app.FragmentContainerView
           android:layout_width="match_parent"
           android:name="androidx.navigation.fragment.NavHostFragment"
           android:layout_height="0dp"
           app:defaultNavHost="true"
-
+          app:navGraph="@navigation/nav_graph"
           android:id="@+id/navHostFragment"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintTop_toBottomOf="@id/layoutToolbar"/>
