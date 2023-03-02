@@ -26,16 +26,9 @@ class MainActivity : AppCompatActivity() {
             navigationView.itemIconTintList=null
             val navController=Navigation.findNavController(this@MainActivity,R.id.navHostFragment)
             NavigationUI.setupWithNavController(navigationView,navController)
-            navController.addOnDestinationChangedListener(object :NavController.OnDestinationChangedListener{
-                override fun onDestinationChanged(
-                    controller: NavController,
-                    destination: NavDestination,
-                    arguments: Bundle?
-                ) {
-                    tvName.text=destination.label
-                }
-
-            })
+            navController.addOnDestinationChangedListener { controller, destination, arguments ->
+                tvName.text = destination.label
+            }
         }
     }
 }
